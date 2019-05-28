@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+	<title>Student Confirmation</title>
+</h:head>
+
+<h:body>
+
+	    The student is confirmed: #{student.firstname} #{student.lastname}
+	    
+	    <br></br>
+	<br></br>
+	    
+	    He is from: #{student.country}
+
+<br></br>
+	<br></br>
+	His phone number is: #{student.phoneNumber}
+
+<br></br>
+	<br></br>
+	Course code: #{student.courseCode}
+	
+	<br></br>
+	<br></br>
+	
+	<h:link value="Let's have a tour" outcome="tour" />
+		
+</h:body>
+</html>

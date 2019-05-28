@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Professor List Demo</title>
+        
+        <h:outputStylesheet library="css" name="professor_table.css"  />
+    </h:head>
+
+    <h:body>
+		<h3>Professor List Demo</h3>		
+		<hr/>
+		
+		<ul>
+			<ui:repeat var="tempProfessor" value="#{professorDataUtil.professors}"
+			styleClass="demo-table"
+    			headerClass="demo-table-header"
+    			rowClasses="demo-table-odd-row,demo-table-even-row"
+			>
+					
+				<li>#{tempProfessor.firstName} #{tempProfessor.lastName}</li>					
+			
+			</ui:repeat>		
+		</ul>
+		<hr/>
+
+	<br/>
+	
+	<h:dataTable value="#{professorDataUtil.professors}" var="tempProfessor"
+		border="1">
+		
+		<h:column>
+			<!-- the column header -->
+			<f:facet name="header">First Name</f:facet>
+			
+			<!--  the value for each row -->
+			#{tempProfessor.firstName}
+		</h:column>
+
+		<h:column>
+			<!-- the column header -->
+			<f:facet name="header">Last Name</f:facet>
+			
+			<!--  the value for each row -->
+			#{tempProfessor.lastName}
+		</h:column>
+
+		<h:column>
+			<!-- the column header -->
+			<f:facet name="header">Email</f:facet>
+			
+			<!--  the value for each row -->
+			#{tempProfessor.email}
+		</h:column>
+
+	</h:dataTable>
+		
+    </h:body>
+</html>
